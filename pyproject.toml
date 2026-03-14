@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "code-agent"
+version = "0.1.0"
+description = "A minimal AI coding agent inspired by Claude Code, mini-swe-agent, and OpenCode"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["agents", "rag", "llm", "code-generation"]
+authors = [
+    {name = "Navisha"},
+]
+
+dependencies = [
+    # Core
+    "pydantic>=2.0",
+    "jinja2",
+    "python-dotenv",
+
+    # LLM
+    "litellm>=1.50.0",
+    "tenacity",
+
+    # RAG
+    "faiss-cpu",
+    "sentence-transformers",
+    "tiktoken",
+
+    # CLI
+    "typer[all]",
+    "rich",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+]
+
+[project.scripts]
+code-agent = "code_agent.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["code_agent*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
