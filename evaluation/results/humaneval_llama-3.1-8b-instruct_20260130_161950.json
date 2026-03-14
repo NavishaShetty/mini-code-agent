@@ -1,0 +1,50 @@
+{
+  "model": "openrouter/meta-llama/llama-3.1-8b-instruct",
+  "timestamp": "2026-01-30T16:19:53.081723",
+  "total_problems": 5,
+  "passed": 0,
+  "failed": 5,
+  "pass_rate": 0.0,
+  "results": [
+    {
+      "task_id": "HumanEval/0",
+      "passed": false,
+      "error": "Generation error: litellm.AuthenticationError: AuthenticationError: OpenrouterException - {\"error\":{\"message\":\"No cookie auth credentials found\",\"code\":401}}",
+      "generated_code": null,
+      "elapsed_time": 0.13536405563354492,
+      "model_stats": null
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": false,
+      "error": "Generation error: litellm.AuthenticationError: AuthenticationError: OpenrouterException - {\"error\":{\"message\":\"No cookie auth credentials found\",\"code\":401}}",
+      "generated_code": null,
+      "elapsed_time": 0.028812885284423828,
+      "model_stats": null
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": false,
+      "error": "Generation error: litellm.AuthenticationError: AuthenticationError: OpenrouterException - {\"error\":{\"message\":\"No cookie auth credentials found\",\"code\":401}}",
+      "generated_code": null,
+      "elapsed_time": 0.026909828186035156,
+      "model_stats": null
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": false,
+      "error": "Generation error: litellm.AuthenticationError: AuthenticationError: OpenrouterException - {\"error\":{\"message\":\"No cookie auth credentials found\",\"code\":401}}",
+      "generated_code": null,
+      "elapsed_time": 0.029016971588134766,
+      "model_stats": null
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": false,
+      "error": "Generation error: litellm.AuthenticationError: AuthenticationError: OpenrouterException - {\"error\":{\"message\":\"No cookie auth credentials found\",\"code\":401}}",
+      "generated_code": null,
+      "elapsed_time": 0.04564094543457031,
+      "model_stats": null
+    }
+  ]
+}

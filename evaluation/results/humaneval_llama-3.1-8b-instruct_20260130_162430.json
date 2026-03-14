@@ -1,0 +1,140 @@
+{
+  "model": "openrouter/meta-llama/llama-3.1-8b-instruct",
+  "timestamp": "2026-01-30T16:24:54.947155",
+  "total_problems": 10,
+  "passed": 10,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "results": [
+    {
+      "task_id": "HumanEval/0",
+      "passed": true,
+      "error": null,
+      "generated_code": "def has_close_elements(numbers: list[float], threshold: float) -> bool:\n    for i in range(len(numbers)):\n        for j in range(i + 1, len(numbers)):\n            if abs(numbers[i] - numbers[j]) < threshold:\n                return True\n    return False",
+      "elapsed_time": 5.468541383743286,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 183,
+        "total_output_tokens": 58
+      }
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": true,
+      "error": null,
+      "generated_code": "def separate_paren_groups(paren_string: str) -> list[str]:\n    stack = []\n    groups = []\n    group = ''\n    for char in paren_string:\n        if char == '(':\n            stack.append(char)\n            group += char\n        elif char == ')':\n            if stack:\n                stack.pop()\n                group += char\n                if not stack:\n                    groups.append(group)\n                    group = ''\n        else:\n            group = ''\n    return groups",
+      "elapsed_time": 2.0279550552368164,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 174,
+        "total_output_tokens": 93
+      }
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": true,
+      "error": null,
+      "generated_code": "def truncate_number(number: float) -> float:\n    return number - int(number)",
+      "elapsed_time": 0.9095249176025391,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 150,
+        "total_output_tokens": 18
+      }
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": true,
+      "error": null,
+      "generated_code": "def below_zero(operations: list[int]) -> bool:\n    balance = 0\n    for operation in operations:\n        balance += operation\n        if balance < 0:\n            return True\n    return False",
+      "elapsed_time": 4.129492998123169,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 173,
+        "total_output_tokens": 44
+      }
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": true,
+      "error": null,
+      "generated_code": "def mean_absolute_deviation(numbers: list[float]) -> float:\n    mean = sum(numbers) / len(numbers)\n    return sum(abs(num - mean) for num in numbers) / len(numbers)",
+      "elapsed_time": 1.3322851657867432,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 177,
+        "total_output_tokens": 41
+      }
+    },
+    {
+      "task_id": "HumanEval/5",
+      "passed": true,
+      "error": null,
+      "generated_code": "def intersperse(numbers: list[int], delimiter: int) -> list[int]:\n    result = []\n    for i, num in enumerate(numbers):\n        if i > 0:\n            result.append(delimiter)\n        result.append(num)\n    return result",
+      "elapsed_time": 1.4972329139709473,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 167,
+        "total_output_tokens": 50
+      }
+    },
+    {
+      "task_id": "HumanEval/6",
+      "passed": true,
+      "error": null,
+      "generated_code": "def parse_nested_parens(paren_string: str) -> list[int]:\n    groups = paren_string.split()\n    result = []\n    for group in groups:\n        max_depth = 0\n        current_depth = 0\n        for char in group:\n            if char == '(':\n                current_depth += 1\n                max_depth = max(max_depth, current_depth)\n            elif char == ')':\n                current_depth -= 1\n        result.append(max_depth)\n    return result",
+      "elapsed_time": 0.8533871173858643,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 155,
+        "total_output_tokens": 99
+      }
+    },
+    {
+      "task_id": "HumanEval/7",
+      "passed": true,
+      "error": null,
+      "generated_code": "def filter_by_substring(strings: list[str], substring: str) -> list[str]:\n    return [s for s in strings if substring in s]",
+      "elapsed_time": 3.0817627906799316,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 152,
+        "total_output_tokens": 32
+      }
+    },
+    {
+      "task_id": "HumanEval/8",
+      "passed": true,
+      "error": null,
+      "generated_code": "def sum_product(numbers: list[int]) -> tuple[int, int]:\n    sum_result = 0\n    product_result = 1\n    for num in numbers:\n        sum_result += num\n        product_result *= num\n    return sum_result, product_result",
+      "elapsed_time": 1.2975127696990967,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 164,
+        "total_output_tokens": 54
+      }
+    },
+    {
+      "task_id": "HumanEval/9",
+      "passed": true,
+      "error": null,
+      "generated_code": "def rolling_max(numbers: list[int]) -> list[int]:\n    result = []\n    max_so_far = float('-inf')\n    for num in numbers:\n        max_so_far = max(max_so_far, num)\n        result.append(max_so_far)\n    return result",
+      "elapsed_time": 1.354248046875,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 158,
+        "total_output_tokens": 54
+      }
+    }
+  ]
+}

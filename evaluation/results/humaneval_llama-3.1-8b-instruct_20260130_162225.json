@@ -1,0 +1,75 @@
+{
+  "model": "openrouter/meta-llama/llama-3.1-8b-instruct",
+  "timestamp": "2026-01-30T16:22:43.320609",
+  "total_problems": 5,
+  "passed": 5,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "results": [
+    {
+      "task_id": "HumanEval/0",
+      "passed": true,
+      "error": null,
+      "generated_code": "def has_close_elements(numbers: list[float], threshold: float) -> bool:\n    for i in range(len(numbers)):\n        for j in range(i + 1, len(numbers)):\n            if abs(numbers[i] - numbers[j]) < threshold:\n                return True\n    return False",
+      "elapsed_time": 1.5462830066680908,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 184,
+        "total_output_tokens": 58
+      }
+    },
+    {
+      "task_id": "HumanEval/1",
+      "passed": true,
+      "error": null,
+      "generated_code": "def separate_paren_groups(paren_string: str) -> list[str]:\n    stack = []\n    groups = []\n    group = ''\n    for char in paren_string:\n        if char == '(':\n            stack.append(char)\n            group += char\n        elif char == ')':\n            stack.pop()\n            group += char\n            if not stack:\n                groups.append(group)\n                group = ''\n    return groups",
+      "elapsed_time": 6.025776147842407,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 173,
+        "total_output_tokens": 82
+      }
+    },
+    {
+      "task_id": "HumanEval/2",
+      "passed": true,
+      "error": null,
+      "generated_code": "def truncate_number(number: float) -> float:\n    return number - int(number)",
+      "elapsed_time": 0.5917370319366455,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 149,
+        "total_output_tokens": 18
+      }
+    },
+    {
+      "task_id": "HumanEval/3",
+      "passed": true,
+      "error": null,
+      "generated_code": "def below_zero(operations: list[int]) -> bool:\n    balance = 0\n    for operation in operations:\n        balance += operation\n        if balance < 0:\n            return True\n    return False",
+      "elapsed_time": 4.2975218296051025,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 173,
+        "total_output_tokens": 44
+      }
+    },
+    {
+      "task_id": "HumanEval/4",
+      "passed": true,
+      "error": null,
+      "generated_code": "def mean_absolute_deviation(numbers: list[float]) -> float:\n    mean = sum(numbers) / len(numbers)\n    return sum(abs(num - mean) for num in numbers) / len(numbers)",
+      "elapsed_time": 2.7242870330810547,
+      "model_stats": {
+        "n_calls": 1,
+        "total_cost": 0.0,
+        "total_input_tokens": 176,
+        "total_output_tokens": 41
+      }
+    }
+  ]
+}
